@@ -188,15 +188,13 @@ select { /* 1 */
   text-transform: none;
 }
 
-/**
- * Correct the inability to style clickable types in iOS and Safari.
- */
-
 button,
 [type="button"],
 [type="reset"],
 [type="submit"] {
-  -webkit-appearance: button;
+  -webkit-appearance: button; /* Chrome, Safari, newer versions of Opera */
+  -moz-appearance: button;    /* Firefox */
+  appearance: button;         /* Standard */
 }
 
 /**
@@ -287,10 +285,13 @@ textarea {
  * 2. Correct the outline style in Safari.
  */
 
-[type="search"] {
-  -webkit-appearance: textfield; /* 1 */
-  outline-offset: -2px; /* 2 */
+ [type="search"] {
+  -webkit-appearance: textfield; /* Chrome, Safari */
+  -moz-appearance: textfield;    /* Firefox */
+  appearance: textfield;         /* Standard */
+  outline-offset: -2px;          /* Safari */
 }
+
 
 /**
  * Remove the inner padding in Chrome and Safari on macOS.
